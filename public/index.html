@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhe de Produto</title>
+    <link rel="icon" type="image/.png" sizes="16x16"  href="./images/favicon.png">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <section class="container">
+        <nav class="breadcrumb">
+            <ul> 
+                <li>Home</li>
+                <li class="fa fa-angle-right">Produto</li>
+                <li class="fa fa-angle-right">Produto para testes</li>
+            </ul>
+            <div class="icon-cart" onclick="openMiniCart();"><i class="fa fa-2x fa-shopping-cart"></i></div>
+        </nav>
+
+        <div class="grid-container">
+            <div class="grid grid-left">                
+                <div class="grid-images">
+                    <div class="images">
+                        <img src="images/img-1.jpg" alt="">
+                    </div>
+                    <div class="images">
+                        <img src="images/img-2.jpg" alt="">
+                    </div>
+                    <div class="images">
+                        <img src="images/img-3.jpg" alt="">
+                    </div>
+                    <div class="images">
+                        <img src="images/img-4.jpg" alt="">
+                    </div>
+                    <div class="images">
+                        <img src="images/img-5.jpg" alt="">
+                    </div>
+                    <div class="images">
+                        <img src="images/img-6.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="container-btns">
+                    <button class="prev-btn btns">
+                        <span class="fa fa-chevron-left"></span>
+                    </button>
+                    <button class="next-btn btns">
+                        <span class="fa fa-chevron-right"></span>
+                    </button>
+                </div>
+            
+                <div class="container-bullets"></div>
+            </div>
+            <div class="grid grid-right">
+                <h1>Fusce sed nibh at tempor consectetur</h1>
+
+                <div class="avaliation">
+                    <ul class="stars">
+                        <li class="icon-stars" data-star="1"></li>
+                        <li class="icon-stars" data-star="2"></li>
+                        <li class="icon-stars" data-star="3"></li>
+                        <li class="icon-stars" data-star="4"></li>
+                        <li class="icon-stars" data-star="5"></li>
+                    </ul>
+                    <p><span id="starsValues">0</span>/5</p>
+                </div>
+
+                <div class="content-price">
+                    <span class="price" data-price="" data-parcel-min="5000" dara-parcel="2" data-total="">R$ 100,00</span>
+                    <div class="content-parcel">
+                        <div class="parcel">
+                            Ou até
+                            <span class="numParcel">2x</span> de
+                            <span class="valueTotal">R$ 50,00</span>
+                            s/juros
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-variation">
+                    <div class="variation">
+                        <div class="label">Cor: <span class="cor selected"></span></div>
+                        <ul class="list list-color">
+                            <li class="item" data-color="red" data-group="20|21|44|46" data-valor="10000">Vermelho</li>
+                            <li class="item" data-color="lightblue" data-group="20|33|44|46" data-valor="12500">Azul Claro</li>
+                            <li class="item" data-color="blue" data-group="30|33|44" data-valor="13000">Azul</li>
+                            <li class="item" data-color="gray" data-group="20|21|33|44|45" data-valor="25000">Cinza</li>
+                            <li class="item" data-color="orange" data-group="21|33|45|46" data-valor="34500">Laranja</li>
+                        </ul>
+                    </div>
+                    <div class="variation">
+                        <div class="label">Tamanho: <span class="tamanho selected"></span></div>
+                        <ul class="list list-size">
+                            <li class="item">20</li>
+                            <li class="item">21</li>
+                            <li class="item">30</li>
+                            <li class="item">33</li>
+                            <li class="item">44</li>
+                            <li class="item">45</li>
+                            <li class="item">46</li>
+                        </ul>
+                    </div>
+                    <div class="table-medida">
+                        <span><i class="fa fa-ruler"></i> Tabela de Medida</span>
+                    </div>
+                </div>
+
+                <div class="content-quantity">
+                    <span class="label">Quantidade: </span>
+                    <div class="quantity-input">
+                        <button type="button" class="btn btn-minus">-</button>
+                        <input type="text" value="1" min="1" class="inputQuantity">
+                        <button type="button" class="btn btn-plus">+</button>
+                    </div>
+                </div>
+
+                <button id="addProduct" class="btn btn-add"><i class="fa fa-shopping-cart"></i> Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="container">
+        <header>
+            <h2>Monte seu kit</h2>
+        </header>
+
+        <div class="addKit hide">
+            <button class="adicionar-kit-carrinho" id="addCartKit">Adiconar ao Carrinho</button>
+        </div>
+
+        <div class="grid-kit">
+            <div class="itens-kit">
+                <div class="imagem">
+                    <img src="https://placehold.co/300x300?text=Produto+01" alt="">
+                </div>
+                <h3>Interdum et malesuada fames ante</h3>
+                <div class="variation">
+                    <ul class="list list-color-kit">
+                        <li class="item" data-color="green" data-group="21|44|46" data-valor="10000" data-size="">Verde</li>
+                        <li class="item" data-color="yellow" data-group="33|44|46" data-valor="12500" data-size="">Amarelo</li>
+                        <li class="item" data-color="purple" data-group="30|33|44" data-valor="13000" data-size="">Roxo</li>
+                        <li class="item" data-color="black" data-group="21|33|44|45" data-valor="25000" data-size="">Preto</li>
+                        <li class="item" data-color="brown" data-group="21|33|45|46" data-valor="34500" data-size="">Marrom</li>
+                    </ul>
+                </div>
+                <div class="variation">
+                    <ul class="list list-size-kit">
+                        <li class="item">21</li>
+                        <li class="item">30</li>
+                        <li class="item">33</li>
+                        <li class="item">44</li>
+                        <li class="item">45</li>
+                        <li class="item">46</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="itens-kit">
+                <div class="imagem">
+                    <img src="https://placehold.co/300x300?text=Produto+02" alt="">
+                </div>
+                <h3>Vestibulum accumsan ipsum</h3>
+                <div class="variation">
+                    <ul class="list list-color-kit">
+                        <li class="item" data-color="red" data-group="20|21|44" data-valor="10000" data-size="">Vermelho</li>
+                        <li class="item" data-color="black" data-group="20|33|44" data-valor="12500" data-size="">Preto</li>
+                        <li class="item" data-color="white" data-group="30|33|44" data-valor="13000" data-size="">Branco</li>
+                        <li class="item" data-color="gray" data-group="20|21|33|44" data-valor="25000" data-size="">Cinza</li>
+                    </ul>
+                </div>
+                <div class="variation">
+                    <ul class="list list-size-kit">
+                        <li class="item">20</li>
+                        <li class="item">21</li>
+                        <li class="item">30</li>
+                        <li class="item">33</li>
+                        <li class="item">44</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="itens-kit">
+                <div class="imagem">
+                    <img src="https://placehold.co/300x300?text=Produto+03" alt="">
+                </div>
+                <h3>Mauris ac urna eget dui suscipit</h3>
+                <div class="variation">
+                    <ul class="list list-color-kit">
+                        <li class="item" data-color="orange" data-group="20|21" data-valor="10000" data-size="">Laranja</li>
+                        <li class="item" data-color="purple" data-group="33|30" data-valor="12500" data-size="">Roxo</li>
+                        <li class="item" data-color="green" data-group="20|33" data-valor="13000" data-size="">Verde</li>
+                    </ul>
+                </div>
+                <div class="variation">
+                    <ul class="list list-size-kit">
+                        <li class="item">20</li>
+                        <li class="item">21</li>
+                        <li class="item">30</li>
+                        <li class="item">33</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="itens-kit">
+                <div class="imagem">
+                    <img src="https://placehold.co/300x300?text=Produto+04" alt="">
+                </div>
+                <h3>Maecenas congue lacus pharetra</h3>
+                <div class="variation">
+                    <ul class="list list-color-kit">
+                        <li class="item" data-color="cream" data-group="15|21|34|55" data-valor="10000" data-size="">Creme</li>
+                        <li class="item" data-color="brown" data-group="15|33|34|55" data-valor="12500" data-size="">Marrom</li>
+                        <li class="item" data-color="purple" data-group="30|33|34" data-valor="13000" data-size="">Roxo</li>
+                        <li class="item" data-color="yellow" data-group="15|21|33|34|45" data-valor="25000" data-size="">Amarelo</li>
+                        <li class="item" data-color="orange" data-group="21|33|45|55" data-valor="34500" data-size="">Laranja</li>
+                    </ul>
+                </div>
+                <div class="variation">
+                    <ul class="list list-size-kit">
+                        <li class="item">15</li>
+                        <li class="item">21</li>
+                        <li class="item">30</li>
+                        <li class="item">33</li>
+                        <li class="item">34</li>
+                        <li class="item">45</li>
+                        <li class="item">55</li>
+                    </ul>
+                </div>
+            </div>           
+        </div>
+
+        <div class="containerButtons">
+            <button type="button" id="addkit" class="btn btn-add-kit">Montar kit</button>
+        </div>
+
+    </div>
+
+    <section class="miniCart">
+
+        <div class="loading">
+            <div class="c-loader">            
+            </div>
+        </div>
+
+        <div class="headerMinicart">
+            <h4>Seu Carrinho [<span class="qtdaTotal">0</span>]</h4>
+            <span class="miniCartClose">x</span>
+        </div>
+
+        <div class="bodyMinicart">
+            <div class="title hide">
+                <span>Seu carrinho está vazio.</span>
+            </div>
+            <div class="container-progress hide">
+                <strong class="msg-frete">Compras acima de <span id="limiteCompra">R$ 1.000,00</span> frete grátis</strong>
+                <span class="valueRestant">Restam <span id="valueRestantFinal"></span> para completar o valor do frete!</span>
+                <span class="msg-win hide">Parabens!!! Você ganhou frete grátis!</span>
+                <div class="progress-bar" data-total="">
+                    <span></span> 
+                </div> 
+            </div>
+        </div>
+
+        <div class="footerMinicart">
+            <div class="totalMinicart">
+                <span class="subtotal">Subtotal:</span>
+                <span class="priceTotal" data-total=""></span>
+            </div>
+            <div class="msg">
+                <p>Taxas e portes de envio calculados no pagamento</p>
+            </div>
+            <div class="btnConcluir">
+                <a href="#" class="btn btn_finalizar">Finalizar Compra</a>
+                <a href="#" class="btn btn_continuar">Continue Comprando</a>
+            </div>
+        </div>
+   
+    </section>
+
+    <div class="modal-medida">
+        <h1>Tabela de medida</h1>
+        <p>Conteúdo da tabela de medida</p>
+        <span class="close">x</span>
+    </div>
+
+    <div class="modal"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
